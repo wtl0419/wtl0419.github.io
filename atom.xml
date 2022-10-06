@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-05T11:47:48.692Z</updated>
+  <updated>2022-10-06T01:36:37.412Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/10/05/STM32%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/"/>
     <id>http://example.com/2022/10/05/STM32%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/</id>
     <published>2022-10-05T03:20:06.000Z</published>
-    <updated>2022-10-05T11:47:48.692Z</updated>
+    <updated>2022-10-06T01:36:37.412Z</updated>
     
     <content type="html"><![CDATA[<h2 id="移植并修改实例程序中的参数"><a href="#移植并修改实例程序中的参数" class="headerlink" title="移植并修改实例程序中的参数"></a>移植并修改实例程序中的参数</h2><h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><p>首先进入阿里云平台，展开设备管理，点击设备并查看目标设备，查看MQTT连接参数</p><p>复制地址mqttHostUrl和端口号port作为备用，复制后点击上方的DeviceSecret查看按钮，复制设备证书的三元组信息</p><p>三元组信息：产品ID，设备名，设备证书</p><p>复制完成后点击产品选项，点击查看，点击Topic类列表，点击自定义Topic，复制订阅和发布地址</p><p>修改程序内无线路由器名称和密码，修改IP地址和端口号，修改实际三元组信息，修改实际的订阅地址。</p><h4 id="我的内容"><a href="#我的内容" class="headerlink" title="我的内容"></a>我的内容</h4><p>ip地址：iot-06z00h6yp22nd5b.mqtt.iothub.aliyuncs.com<br>port：1883<br>产品ID：hqbae3iSjhM<br>产品名称：deviceStm32<br>产品证书：bb54c8a0549bb9a9795b98076c8eb7df<br>订阅：&#x2F;hqbae3iSjhM&#x2F;deviceStm32&#x2F;user&#x2F;get<br>发布：&#x2F;hqbae3iSjhM&#x2F;deviceStm32&#x2F;user&#x2F;update&#x2F;error</p><h2 id="云平台数据收发"><a href="#云平台数据收发" class="headerlink" title="云平台数据收发"></a>云平台数据收发</h2><p>进入设备，点击设备选择Topic列表，点击发布消息</p><p>在监控运维中的日志服务可以查看到收发的消息</p><h2 id="驱动程序结构与原理"><a href="#驱动程序结构与原理" class="headerlink" title="驱动程序结构与原理"></a>驱动程序结构与原理</h2><p>程序首先与云平台建立TCP连接，其余通讯由MQTT协议来实现</p><h4 id="MQTT控制报文的结构"><a href="#MQTT控制报文的结构" class="headerlink" title="MQTT控制报文的结构"></a>MQTT控制报文的结构</h4><h5 id="固定报头"><a href="#固定报头" class="headerlink" title="固定报头"></a>固定报头</h5><p>固定包头由两个字节组成，第一个字节包含MQTT控制报文的类型和用于指定控制报文类型的标志位，第二个字节为剩余长度</p><h5 id="可变报头"><a href="#可变报头" class="headerlink" title="可变报头"></a>可变报头</h5><p>内容为订阅和发布信息</p><h5 id="有效载荷"><a href="#有效载荷" class="headerlink" title="有效载荷"></a>有效载荷</h5><p>实际要发送的内容信息</p>]]></content>
     
