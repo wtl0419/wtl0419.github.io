@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-08T07:33:06.183Z</updated>
+  <updated>2022-10-08T08:11:55.036Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -17,13 +17,39 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>计算机操作系统</title>
+    <link href="http://example.com/2022/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
+    <id>http://example.com/2022/10/08/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
+    <published>2022-10-08T08:07:53.000Z</published>
+    <updated>2022-10-08T08:11:55.036Z</updated>
+    
+    <content type="html"><![CDATA[<h2 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h2><p>P操作：信号量-1；</p><p>V操作：信号量＋1;</p><p>P操作为在没有信号量之前为阻塞状态，需要V操作进行唤醒。</p><p>一对PV操纵使用同一个信号量<img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/PV%E6%93%8D%E4%BD%9C.png"></p><p>图中题目中，收银员进程在购书者产生付款需求之前处于阻塞状态，因此是一个P操作，购书者提出付款需求，需要使用V操作来唤醒收银员进程，这一对PV操作使用一组信号量，购书者需要等待收银员进程执行完成，因此需要使用P操作阻塞购书者进程，等待收银员进程产生V操作来释放信号量来继续运行。这一对PV操作使用另一组信号量。</p><p>1.A</p><p>2.C</p><h2 id="死锁问题"><a href="#死锁问题" class="headerlink" title="死锁问题"></a>死锁问题</h2><h3 id="死锁产生的条件"><a href="#死锁产生的条件" class="headerlink" title="死锁产生的条件"></a>死锁产生的条件</h3><p>环路等待：各个进程各自等待目标进程的资源，形成环路</p><p>互斥：资源是互斥的</p><p>不可剥夺：系统不会剥夺已经分配给进程的资源</p><p>保持和等待：各个进程保持自己的资源并等待其他进程释放资源给自己</p><h3 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h3><p>打破以上四个条件之一</p><h3 id="死锁避免"><a href="#死锁避免" class="headerlink" title="死锁避免"></a>死锁避免</h3><h4 id="有序资源分配"><a href="#有序资源分配" class="headerlink" title="有序资源分配"></a>有序资源分配</h4><h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95.png"></p><p>根据已经分配出的资源数，得到目前还剩下的资源为R1：2，R2：1，R3：0，只能满足P2所需要的资源数，所以将资源分配给P2进程，执行完成P2进程后可用资源为4，2，1，只能满足P4进程所需要的资源数，将资源分配给P4进程让其执行，选B。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h2 id=&quot;PV操作&quot;&gt;&lt;a href=&quot;#PV操作&quot; class=&quot;headerlink&quot; title=&quot;PV操作&quot;&gt;&lt;/a&gt;PV操作&lt;/h2&gt;&lt;p&gt;P操作：信号量-1；&lt;/p&gt;
+&lt;p&gt;V操作：信号量＋1;&lt;/p&gt;
+&lt;p&gt;P操作为在没有信号量之前为阻塞状态，需要V操作进行唤</summary>
+      
+    
+    
+    
+    <category term="软考" scheme="http://example.com/categories/%E8%BD%AF%E8%80%83/"/>
+    
+    
+    <category term="软件设计师" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"/>
+    
+  </entry>
+  
+  <entry>
     <title></title>
     <link href="http://example.com/2022/10/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/"/>
     <id>http://example.com/2022/10/08/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/</id>
     <published>2022-10-08T07:04:12.213Z</published>
-    <updated>2022-10-08T07:33:06.183Z</updated>
+    <updated>2022-10-08T08:07:13.393Z</updated>
     
-    <content type="html"><![CDATA[<p>title: 操作系统<br>date: 2022-10-08 15:04:12<br>tags: 软件设计师 操作系统<br>categories: 软考<br>cover:  <a href="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/pv_index.jpg">https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/pv_index.jpg</a></p><h2 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h2><p>P操作：信号量-1；</p><p>V操作：信号量＋1;</p><p>P操作为在没有信号量之前为阻塞状态，需要V操作进行唤醒。</p><p>一对PV操纵使用同一个信号量<img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/PV%E6%93%8D%E4%BD%9C.png"></p><p>图中题目中，收银员进程在购书者产生付款需求之前处于阻塞状态，因此是一个P操作，购书者提出付款需求，需要使用V操作来唤醒收银员进程，这一对PV操作使用一组信号量，购书者需要等待收银员进程执行完成，因此需要使用P操作阻塞购书者进程，等待收银员进程产生V操作来释放信号量来继续运行。这一对PV操作使用另一组信号量。</p><p>1.A</p><p>2.C</p>]]></content>
+    <content type="html"><![CDATA[<p>title: 操作系统<br>date: 2022-10-08 15:04:12<br>tags: 软件设计师 操作系统<br>categories: 软考<br>cover:  <a href="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/pv_index.jpg">https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/pv_index.jpg</a></p><h2 id="PV操作"><a href="#PV操作" class="headerlink" title="PV操作"></a>PV操作</h2><p>P操作：信号量-1；</p><p>V操作：信号量＋1;</p><p>P操作为在没有信号量之前为阻塞状态，需要V操作进行唤醒。</p><p>一对PV操纵使用同一个信号量<img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/PV%E6%93%8D%E4%BD%9C.png"></p><p>图中题目中，收银员进程在购书者产生付款需求之前处于阻塞状态，因此是一个P操作，购书者提出付款需求，需要使用V操作来唤醒收银员进程，这一对PV操作使用一组信号量，购书者需要等待收银员进程执行完成，因此需要使用P操作阻塞购书者进程，等待收银员进程产生V操作来释放信号量来继续运行。这一对PV操作使用另一组信号量。</p><p>1.A</p><p>2.C</p><h2 id="死锁问题"><a href="#死锁问题" class="headerlink" title="死锁问题"></a>死锁问题</h2><h3 id="死锁产生的条件"><a href="#死锁产生的条件" class="headerlink" title="死锁产生的条件"></a>死锁产生的条件</h3><p>环路等待：各个进程各自等待目标进程的资源，形成环路</p><p>互斥：资源是互斥的</p><p>不可剥夺：系统不会剥夺已经分配给进程的资源</p><p>保持和等待：各个进程保持自己的资源并等待其他进程释放资源给自己</p><h3 id="死锁预防"><a href="#死锁预防" class="headerlink" title="死锁预防"></a>死锁预防</h3><p>打破以上四个条件之一</p><h3 id="死锁避免"><a href="#死锁避免" class="headerlink" title="死锁避免"></a>死锁避免</h3><h4 id="有序资源分配"><a href="#有序资源分配" class="headerlink" title="有序资源分配"></a>有序资源分配</h4><h4 id="银行家算法"><a href="#银行家算法" class="headerlink" title="银行家算法"></a>银行家算法</h4><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%93%8D%E4%BD%9C%E7%B3%BB%E7%BB%9F/%E9%93%B6%E8%A1%8C%E5%AE%B6%E7%AE%97%E6%B3%95.png"></p><p>根据已经分配出的资源数，得到目前还剩下的资源为R1：2，R2：1，R3：0，只能满足P2所需要的资源数，所以将资源分配给P2进程，执行完成P2进程后可用资源为4，2，1，只能满足P4进程所需要的资源数，将资源分配给P4进程让其执行，选B。</p>]]></content>
     
     
       
