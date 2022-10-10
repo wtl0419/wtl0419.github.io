@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-09T07:08:19.729Z</updated>
+  <updated>2022-10-10T11:13:58.969Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,30 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022.10.10</title>
+    <link href="http://example.com/2022/10/10/2022-10-10/"/>
+    <id>http://example.com/2022/10/10/2022-10-10/</id>
+    <published>2022-10-10T10:49:52.000Z</published>
+    <updated>2022-10-10T11:13:58.969Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>8号还想着巩固下计算机操作系统的知识，结果上午摆烂，下午来了实验室也不想学习，磨磨唧唧到了晚上，题目也没看，数据库系统的知识也只是开了个头，很多东西都没听进去，毕业设计也没动，摆烂的一天让我感到羞愧但又什么都不想干，一遍羞愧一遍摆烂。苦笑.jpg</p><h1 id="今天的工作"><a href="#今天的工作" class="headerlink" title="今天的工作"></a>今天的工作</h1><p>今天是周一吗，新的一周开始了，继续开始进行毕业设计的开发，从上次的错误开始进行，没有继续烧录MQTT的固件，选择了不烧录固件，使用mqtt驱动程序去进行阿里云服务器的连接，今天使用驱动代码连接上了云服务器上的设备，设备显示在线，但无法发布消息。又掉坑里了，明天解决这个问题。</p><p>今天倒是解决了之前遇到的程序无法跳出B .的问题，解决方法是检查一下被遗漏的中断处理函数，也没有什么困难。</p><p>今天接了一个可以去实习的公司，是一个医疗器械的公司，在大学科技园阳光园区，有点远，明天可能是有技术面试，HR只是口头答应可以去实习，先看看明天的技术面试吧。</p><h1 id="明天的工作"><a href="#明天的工作" class="headerlink" title="明天的工作"></a>明天的工作</h1><p>尝试解决订阅和发布问题，使单片机可以向阿里云发送消息。</p><h1 id="一些牢骚"><a href="#一些牢骚" class="headerlink" title="一些牢骚"></a>一些牢骚</h1><p>有点心累。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.10_content.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a&gt;前情提要&lt;/h1&gt;&lt;p&gt;8号还想着巩固下计算机操作系统的知识，结果上午摆烂，下午来了实验室也不想学习，磨磨唧唧到了晚上，题目也没看，数据库系统的知识</summary>
+      
+    
+    
+    
+    <category term="记录" scheme="http://example.com/categories/%E8%AE%B0%E5%BD%95/"/>
+    
+    
+    <category term="毕业设计" scheme="http://example.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1/"/>
+    
+  </entry>
   
   <entry>
     <title>数据库系统</title>
@@ -45,7 +69,7 @@
     <link href="http://example.com/2022/10/08/2022-10-8/"/>
     <id>http://example.com/2022/10/08/2022-10-8/</id>
     <published>2022-10-08T11:14:32.000Z</published>
-    <updated>2022-10-08T11:32:58.684Z</updated>
+    <updated>2022-10-10T10:59:35.310Z</updated>
     
     <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>昨天做了一些毕业设计的工作，打算留一些给今天做。</p><h1 id="今日状态"><a href="#今日状态" class="headerlink" title="今日状态"></a>今日状态</h1><p>今天上午天气阴沉，无心学习，想着放个小假，遂开始摆烂，在宿舍躺了半天，看了两场比赛。</p><p>下午做完核酸后来到实验室，不想做毕设，开发真的好麻烦啊，开局刷经验好累啊。于是学习软件设计师考试的内容，过了一遍操作系统的理论知识。</p><h1 id="明天规划"><a href="#明天规划" class="headerlink" title="明天规划"></a>明天规划</h1><p>做做操作系统的题目对今天的知识进行巩固，继续进行毕业设计的制作。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.8_content.jpg"></p>]]></content>
     
@@ -58,7 +82,7 @@
     
     
     
-    <category term="日常记录 毕业设计开发记录" scheme="http://example.com/categories/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95-%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
+    <category term="毕业设计开发记录" scheme="http://example.com/categories/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%BC%80%E5%8F%91%E8%AE%B0%E5%BD%95/"/>
     
     
     <category term="记录" scheme="http://example.com/tags/%E8%AE%B0%E5%BD%95/"/>
