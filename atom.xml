@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-11T07:57:27.042Z</updated>
+  <updated>2022-10-11T09:30:28.135Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,8 +21,15 @@
     <link href="http://example.com/2022/10/11/ucos/"/>
     <id>http://example.com/2022/10/11/ucos/</id>
     <published>2022-10-11T07:54:43.000Z</published>
-    <updated>2022-10-11T07:57:27.042Z</updated>
+    <updated>2022-10-11T09:30:28.135Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="RTOS系统"><a href="#RTOS系统" class="headerlink" title="RTOS系统"></a>RTOS系统</h1><h5 id="硬实时"><a href="#硬实时" class="headerlink" title="硬实时"></a>硬实时</h5><p>规定时间内必须完成操作，不允许超时</p><h5 id="软实时"><a href="#软实时" class="headerlink" title="软实时"></a>软实时</h5><p>不如硬实时严格</p><h5 id="可剥夺性内核"><a href="#可剥夺性内核" class="headerlink" title="可剥夺性内核"></a>可剥夺性内核</h5><p>可以剥夺其他任务的CPU使用权，总是在运行就绪任务中的优先级最高的那个任务</p><h1 id="UCOS在F103上的移植"><a href="#UCOS在F103上的移植" class="headerlink" title="UCOS在F103上的移植"></a>UCOS在F103上的移植</h1><h2 id="源码获取"><a href="#源码获取" class="headerlink" title="源码获取"></a>源码获取</h2><p>源码我是通过正点原子提供的源码直接复制过来的，也可以通过mirium官网进行下载。</p><p>官网地址：<a href="https://www.silabs.com/developers/micrium">https://www.silabs.com/developers/micrium</a></p><h2 id="源码移植"><a href="#源码移植" class="headerlink" title="源码移植"></a>源码移植</h2><h3 id="文件移植"><a href="#文件移植" class="headerlink" title="文件移植"></a>文件移植</h3><p>将ucos路径下的三个文件夹复制到工程路径下</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8F/ucos_%E7%A7%BB%E6%A4%8D.png"></p><p>新建两个文件夹UCOS_BSP,UCOS_CONFIG</p><p>向UCOS_CONFIG文件夹中添加\Micrium\Software\EvalBoards\Micrium\uC-Eval-STM32F107\uCOS-III路径下的程序文件</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8F/ucos_config.png"></p><p>向UCOS_BSP文件夹中添加Micrium\Software\EvalBoards\Micrium\uC-Eval-STM32F107\BSP路径下的程序文件</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8F/ucos_bsp.png"></p><h3 id="移植到工程"><a href="#移植到工程" class="headerlink" title="移植到工程"></a>移植到工程</h3><p>在工程中新建分组</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8F/project_menu.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;RTOS系统&quot;&gt;&lt;a href=&quot;#RTOS系统&quot; class=&quot;headerlink&quot; title=&quot;RTOS系统&quot;&gt;&lt;/a&gt;RTOS系统&lt;/h1&gt;&lt;h5 id=&quot;硬实时&quot;&gt;&lt;a href=&quot;#硬实时&quot; class=&quot;headerlink&quot; title=&quot;硬实时</summary>
+      
     
     
     
