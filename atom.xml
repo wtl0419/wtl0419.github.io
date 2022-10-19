@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-15T13:15:40.240Z</updated>
+  <updated>2022-10-19T10:05:29.141Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,28 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2022.10.19</title>
+    <link href="http://example.com/2022/10/19/2022-10-19/"/>
+    <id>http://example.com/2022/10/19/2022-10-19/</id>
+    <published>2022-10-19T09:49:30.000Z</published>
+    <updated>2022-10-19T10:05:29.141Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>从上周四开始投递简历之后收到了一些公司的面试邀请，但都是需要立即到岗的，所以就搁置了，打算放寒假前一周再联系，现在依然是在投简历。北京飞音时代公司发来的笔试题做了，但感觉希望不大，最后两道算法题调试结果一直不对，因为是考试的原因，比较紧张，没有把思路理清，笔试结束后第二天把题目做了出来，也不是很难，唉😔，希望能有面试机会吧。</p><p>关于蓝桥杯获奖的事情还有一个单项奖学金可以申请，当时听错了还以为是一千块钱，看了一下去年的单项奖学金初审名单，可能才400块钱，也还可以，算上比赛的报名费以及材料费加起来一共一千一，当时的心情很开心，把这件事情和父母说了说，他们也很开心。还和父亲说了一些以后的规划，对我的要求就是踏踏实实用学到的专业知识工作三年就好，只是这么一个期望，家里不算富裕但也还可以，不需要我向家里补贴。</p><h1 id="今天的事情"><a href="#今天的事情" class="headerlink" title="今天的事情"></a>今天的事情</h1><p>今天结束了ucos实时操作系统的学习，只是学习了一下接口的使用，并没有实际项目可以练习，一路学习下来还是很简单的，有操作系统的前置知识，学习实时操作系统只是把之前学过的操作系统只是进行了实践。打算买一块Linux开发板开始嵌入式Linux的学习。</p><h1 id="今后规划"><a href="#今后规划" class="headerlink" title="今后规划"></a>今后规划</h1><p>买一块板子，开始学习嵌入式Linux。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.19_content.jpg"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a&gt;前情提要&lt;/h1&gt;&lt;p&gt;从上周四开始投递简历之后收到了一些公司的面试邀请，但都是需要立即到岗的，所以就搁置了，打算放寒假前一周再联系，现在依然是在投</summary>
+      
+    
+    
+    
+    
+    <category term="记录" scheme="http://example.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>面试笔试题</title>
