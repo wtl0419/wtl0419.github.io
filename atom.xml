@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-19T10:05:29.141Z</updated>
+  <updated>2022-10-23T02:04:39.395Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,21 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>C语言的本质</title>
+    <link href="http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
+    <id>http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/</id>
+    <published>2022-10-23T01:58:59.000Z</published>
+    <updated>2022-10-23T02:04:39.395Z</updated>
+    
+    
+    
+    
+    
+    <category term="嵌入式" scheme="http://example.com/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/"/>
+    
+  </entry>
   
   <entry>
     <title>2022.10.19</title>
