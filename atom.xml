@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-23T03:40:41.498Z</updated>
+  <updated>2022-10-23T12:54:42.977Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/"/>
     <id>http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/</id>
     <published>2022-10-23T01:58:59.000Z</published>
-    <updated>2022-10-23T03:40:41.498Z</updated>
+    <updated>2022-10-23T12:54:42.977Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="程序执行"><a href="#程序执行" class="headerlink" title="程序执行"></a>程序执行</h1><p>程序编译生成axf&#x2F;hex&#x2F;bin文件烧写到单片机flash中，cpu上电后依次读取flash中的指令并执行这些指令</p><p>在调用函数时，LR寄存器保存执行函数前下一条指令的地址，执行完函数后跳回到LR寄存器中保存的地址。</p><p>在调用函数前，先进行保存现场，将当前寄存器中的数值压入栈中</p><p>PC保存函数的地址，CPU每次都是执行PC寄存器中的指令</p><h1 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h1><p>局部变量初始化先分配在栈中，在初始化时先使用压栈指令给局部变量分配空间，再使用mov指令和str指令对该空间进行赋值</p><p>在进入函数时分配局部变量和程序开始执行时分配局部变量相同，在退出函数时依次将当前栈内的数据弹栈赋值给寄存器，将进入栈时压入的LR寄存器的数值赋值给PC寄存器，栈指针恢复到进入函数之前的位置。</p><h1 id="RAM、ROM和FLASH"><a href="#RAM、ROM和FLASH" class="headerlink" title="RAM、ROM和FLASH"></a>RAM、ROM和FLASH</h1><p>ROM中存放用户程序和需要永久保存的数据。</p><p>RAM中存储用户程序中用到的变量，包括全局变量，局部变量，堆栈段。</p><p>FLASH中存储用户程序和需要永久保存的数据。</p>]]></content>
+    <content type="html"><![CDATA[<h1 id="程序执行"><a href="#程序执行" class="headerlink" title="程序执行"></a>程序执行</h1><p>程序编译生成axf&#x2F;hex&#x2F;bin文件烧写到单片机flash中，cpu上电后依次读取flash中的指令并执行这些指令</p><p>在调用函数时，LR寄存器保存执行函数前下一条指令的地址，执行完函数后跳回到LR寄存器中保存的地址。</p><p>在调用函数前，先进行保存现场，将当前寄存器中的数值压入栈中</p><p>PC保存函数的地址，CPU每次都是执行PC寄存器中的指令</p><h1 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h1><p>局部变量初始化先分配在栈中，在初始化时先使用压栈指令给局部变量分配空间，再使用mov指令和str指令对该空间进行赋值</p><p>在进入函数时分配局部变量和程序开始执行时分配局部变量相同，在退出函数时依次将当前栈内的数据弹栈赋值给寄存器，将进入栈时压入的LR寄存器的数值赋值给PC寄存器，栈指针恢复到进入函数之前的位置。</p><h1 id="全局变量的初始化和空间分配"><a href="#全局变量的初始化和空间分配" class="headerlink" title="全局变量的初始化和空间分配"></a>全局变量的初始化和空间分配</h1><p>在调用main函数之前需要先调用一个copy函数将flash中的全局变量全部复制到ram中</p><p>链接器会根据已经指定的内存地址来进行空间分配</p><p>在对全局变量进行赋值操作时，首先去flash中读取全局变量在内存中的地址，根据该地址来得到全局变量的数值</p><p>没有进行初始化或者初始化为0的全局变量&#x2F;静态局部变量存储到bss段</p><p>多线程访问全局变量会产生<strong>非线程安全现象</strong>，在线程A对变量进行修改时，切换到线程B，切换前进行保护现场的操作，将还未经修改寄存器数值保存到堆栈，线程B修改寄存器数值后切换到A线程时需要恢复A线程的现场，将堆栈中未经修改的寄存器数值又赋值回了寄存器中，相当于线程B进行了无效操作。</p><p>为防止以上现象发生可以在访问全局变量时关中断，防止中断函数打断访问过程。</p><h1 id="RAM、ROM和FLASH"><a href="#RAM、ROM和FLASH" class="headerlink" title="RAM、ROM和FLASH"></a>RAM、ROM和FLASH</h1><p>ROM中存放用户程序和需要永久保存的数据。</p><p>RAM中存储用户程序中用到的变量，包括全局变量，局部变量，堆栈段。</p><p>FLASH中存储用户程序和需要永久保存的数据。</p><p>以f103为例，ram仅有64k，flash有512k，代码段存放在flash中</p><h1 id="栈和堆"><a href="#栈和堆" class="headerlink" title="栈和堆"></a>栈和堆</h1><p>栈向下增长</p><p>堆就是一块可以使用malloc和free函数管理的空闲空间 </p><p>堆的简易实现为一个占位空间大的数组</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">char</span> mybuf[<span class="number">20</span>*<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">malloc</span><span class="params">(<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *ret = &amp;mybuf[index];</span><br><span class="line">    index += size;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure><p>单片机程序运行栈不够的时候，程序会跑飞</p><h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1>]]></content>
     
     
       
