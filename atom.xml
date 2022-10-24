@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-24T03:13:47.666Z</updated>
+  <updated>2022-10-24T12:16:30.472Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,9 +21,9 @@
     <link href="http://example.com/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     <id>http://example.com/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/</id>
     <published>2022-10-24T01:33:41.000Z</published>
-    <updated>2022-10-24T03:13:47.666Z</updated>
+    <updated>2022-10-24T12:16:30.472Z</updated>
     
-    <content type="html"><![CDATA[<h1 id="配置VMWARE使用双网卡连接开发板"><a href="#配置VMWARE使用双网卡连接开发板" class="headerlink" title="配置VMWARE使用双网卡连接开发板"></a>配置VMWARE使用双网卡连接开发板</h1><p>使用网卡连接开发板后在此电脑-&gt;设置-&gt;设备管理器-&gt;网络适配器中查看是否有连接</p><p>在虚拟网络适配器中的桥接模式选择指定的开发板网卡</p><h2 id="Linux配置ip"><a href="#Linux配置ip" class="headerlink" title="Linux配置ip"></a>Linux配置ip</h2><p>在虚拟机中setting设置网络，ip为192.168.5.11</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/linux_ip.png"></p><h2 id="Windows配置ip"><a href="#Windows配置ip" class="headerlink" title="Windows配置ip"></a>Windows配置ip</h2><p>在网络适配器中指定ip</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/win_ip.png"></p>]]></content>
+    <content type="html"><![CDATA[<h1 id="配置VMWARE使用双网卡连接开发板"><a href="#配置VMWARE使用双网卡连接开发板" class="headerlink" title="配置VMWARE使用双网卡连接开发板"></a>配置VMWARE使用双网卡连接开发板</h1><p>使用网卡连接开发板后在此电脑-&gt;设置-&gt;设备管理器-&gt;网络适配器中查看是否有连接</p><p>在虚拟网络适配器中的桥接模式选择指定的开发板网卡</p><h2 id="Linux配置ip"><a href="#Linux配置ip" class="headerlink" title="Linux配置ip"></a>Linux配置ip</h2><p>在虚拟机中setting设置网络，ip为192.168.5.11</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/linux_ip.png"></p><h2 id="Windows配置ip"><a href="#Windows配置ip" class="headerlink" title="Windows配置ip"></a>Windows配置ip</h2><p>在网络适配器中指定ip</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/win_ip.png"></p><h1 id="连接串口"><a href="#连接串口" class="headerlink" title="连接串口"></a>连接串口</h1><p>用usb线将开发板与电脑连接起来，在设备管理器中显示了串口后在MobaXterm中添加串口，首先点击Session，在里面点击Serial，将波特率改为115200，之后选择高级选项Advance Serial setting选择8N1控制流为None，完成后点击ok，进入连接后用户名为root，输入root即可登录</p><h1 id="开发板挂在ubuntu的NFS目录"><a href="#开发板挂在ubuntu的NFS目录" class="headerlink" title="开发板挂在ubuntu的NFS目录"></a>开发板挂在ubuntu的NFS目录</h1><p>NFS（Net File System）</p><p>在前面配置环境时已经开启了访问权限并启动了NFS服务</p><p>通过网络访问Ubuntu目录</p><p>mount -t nfs -o nolock,vers&#x3D;3 192.168.5.11:&#x2F;home&#x2F;book&#x2F;nfs_root </p><p>使用该命令即可挂载Ubuntu目录</p><h1 id="开发板的第一个APP"><a href="#开发板的第一个APP" class="headerlink" title="开发板的第一个APP"></a>开发板的第一个APP</h1><p>将文件交叉编译后复制到Ubuntu的nfs服务目录下，开发板经过nfs挂载Ubuntu的目录后将相应的文件拷贝到开发板上，通过chmod添加可执行权限后执行程序即可。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/first_app.png"></p><h1 id="开发板的第一个驱动"><a href="#开发板的第一个驱动" class="headerlink" title="开发板的第一个驱动"></a>开发板的第一个驱动</h1><h2 id="编译替换内核"><a href="#编译替换内核" class="headerlink" title="编译替换内核"></a>编译替换内核</h2><p>根据Linux开发手册中提供的指令依次执行</p><p>首先编译内核，然后编译设备树，编译完成后将设备树拷贝到对应目录。</p><p>编译完成后更换开发板上原有的驱动程序</p><h1 id="一些疑惑和个人理解"><a href="#一些疑惑和个人理解" class="headerlink" title="一些疑惑和个人理解"></a>一些疑惑和个人理解</h1><h2 id="为何要进行三网ping通"><a href="#为何要进行三网ping通" class="headerlink" title="为何要进行三网ping通"></a>为何要进行三网ping通</h2><p>个人理解为嵌入式Linux编程传输文件需要使用nfs文件目录，和使用tftp进行文件的传输，所以需要三网ping通用于传输文件</p>]]></content>
     
     
       
