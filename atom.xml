@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-10-24T01:39:18.299Z</updated>
+  <updated>2022-10-24T03:13:47.666Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,8 +21,15 @@
     <link href="http://example.com/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"/>
     <id>http://example.com/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/</id>
     <published>2022-10-24T01:33:41.000Z</published>
-    <updated>2022-10-24T01:39:18.299Z</updated>
+    <updated>2022-10-24T03:13:47.666Z</updated>
     
+    <content type="html"><![CDATA[<h1 id="配置VMWARE使用双网卡连接开发板"><a href="#配置VMWARE使用双网卡连接开发板" class="headerlink" title="配置VMWARE使用双网卡连接开发板"></a>配置VMWARE使用双网卡连接开发板</h1><p>使用网卡连接开发板后在此电脑-&gt;设置-&gt;设备管理器-&gt;网络适配器中查看是否有连接</p><p>在虚拟网络适配器中的桥接模式选择指定的开发板网卡</p><h2 id="Linux配置ip"><a href="#Linux配置ip" class="headerlink" title="Linux配置ip"></a>Linux配置ip</h2><p>在虚拟机中setting设置网络，ip为192.168.5.11</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/linux_ip.png"></p><h2 id="Windows配置ip"><a href="#Windows配置ip" class="headerlink" title="Windows配置ip"></a>Windows配置ip</h2><p>在网络适配器中指定ip</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/win_ip.png"></p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;配置VMWARE使用双网卡连接开发板&quot;&gt;&lt;a href=&quot;#配置VMWARE使用双网卡连接开发板&quot; class=&quot;headerlink&quot; title=&quot;配置VMWARE使用双网卡连接开发板&quot;&gt;&lt;/a&gt;配置VMWARE使用双网卡连接开发板&lt;/h1&gt;&lt;p&gt;使用网卡连接</summary>
+      
     
     
     
