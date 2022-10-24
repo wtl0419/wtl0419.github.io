@@ -1,0 +1,168 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"><title>C语言的本质 | SEwtl</title><meta name="keywords" content="嵌入式"><meta name="author" content="Wtl"><meta name="copyright" content="Wtl"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="程序执行程序编译生成axf&#x2F;hex&#x2F;bin文件烧写到单片机flash中，cpu上电后依次读取flash中的指令并执行这些指令 在调用函数时，LR寄存器保存执行函数前下一条指令的地址，执行完函数后跳回到LR寄存器中保存的地址。 在调用函数前，先进行保存现场，将当前寄存器中的数值压入栈中 PC保存函数的地址，CPU每次都是执行PC寄存器中的指令 局部变量局部变量初始化先分配在栈中，">
+<meta property="og:type" content="article">
+<meta property="og:title" content="C语言的本质">
+<meta property="og:url" content="http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/index.html">
+<meta property="og:site_name" content="SEwtl">
+<meta property="og:description" content="程序执行程序编译生成axf&#x2F;hex&#x2F;bin文件烧写到单片机flash中，cpu上电后依次读取flash中的指令并执行这些指令 在调用函数时，LR寄存器保存执行函数前下一条指令的地址，执行完函数后跳回到LR寄存器中保存的地址。 在调用函数前，先进行保存现场，将当前寄存器中的数值压入栈中 PC保存函数的地址，CPU每次都是执行PC寄存器中的指令 局部变量局部变量初始化先分配在栈中，">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/C%E8%AF%AD%E8%A8%80%E6%9C%AC%E8%B4%A8/C_index.jpg">
+<meta property="article:published_time" content="2022-10-23T01:58:59.000Z">
+<meta property="article:modified_time" content="2022-10-23T12:54:42.977Z">
+<meta property="article:author" content="Wtl">
+<meta property="article:tag" content="嵌入式">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/C%E8%AF%AD%E8%A8%80%E6%9C%AC%E8%B4%A8/C_index.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free/css/all.min.css" media="print" onload="this.media='all'"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = { 
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlighjs","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '天',
+  date_suffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: undefined,
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  source: {
+    justifiedGallery: {
+      js: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.js',
+      css: 'https://cdn.jsdelivr.net/npm/flickr-justified-gallery/dist/fjGallery.min.css'
+    }
+  },
+  isPhotoFigcaption: false,
+  islazyload: false,
+  isAnchor: false
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: 'C语言的本质',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2022-10-23 20:54:42'
+}</script><noscript><style type="text/css">
+  #nav {
+    opacity: 1
+  }
+  .justified-gallery img {
+    opacity: 1
+  }
+
+  #recent-posts time,
+  #post-meta time {
+    display: inline !important
+  }
+</style></noscript><script>(win=>{
+    win.saveToLocal = {
+      set: function setWithExpiry(key, value, ttl) {
+        if (ttl === 0) return
+        const now = new Date()
+        const expiryDay = ttl * 86400000
+        const item = {
+          value: value,
+          expiry: now.getTime() + expiryDay,
+        }
+        localStorage.setItem(key, JSON.stringify(item))
+      },
+
+      get: function getWithExpiry(key) {
+        const itemStr = localStorage.getItem(key)
+
+        if (!itemStr) {
+          return undefined
+        }
+        const item = JSON.parse(itemStr)
+        const now = new Date()
+
+        if (now.getTime() > item.expiry) {
+          localStorage.removeItem(key)
+          return undefined
+        }
+        return item.value
+      }
+    }
+  
+    win.getScript = url => new Promise((resolve, reject) => {
+      const script = document.createElement('script')
+      script.src = url
+      script.async = true
+      script.onerror = reject
+      script.onload = script.onreadystatechange = function() {
+        const loadState = this.readyState
+        if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+        script.onload = script.onreadystatechange = null
+        resolve()
+      }
+      document.head.appendChild(script)
+    })
+  
+      win.activateDarkMode = function () {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = function () {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          if (t === 'dark') activateDarkMode()
+          else if (t === 'light') activateLightMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+    const detectApple = () => {
+      if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+        document.documentElement.classList.add('apple')
+      }
+    }
+    detectApple()
+    })(window)</script><meta name="generator" content="Hexo 6.3.0"><link rel="alternate" href="/atom.xml" title="SEwtl" type="application/atom+xml">
+</head><body><div id="web_bg"></div><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/hexo_dido.jpg" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><hr/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 音视</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/C%E8%AF%AD%E8%A8%80%E6%9C%AC%E8%B4%A8/C_index.jpg')"><nav id="nav"><span id="blog_name"><a id="site-name" href="/">SEwtl</a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 主页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 档案</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page group" href="javascript:void(0);"><i class="fa-fw fas fa-list"></i><span> 音视</span><i class="fas fa-chevron-down"></i></a><ul class="menus_item_child"><li><a class="site-page child" href="/music/"><i class="fa-fw fas fa-music"></i><span> Music</span></a></li><li><a class="site-page child" href="/movies/"><i class="fa-fw fas fa-video"></i><span> Movie</span></a></li></ul></div><div class="menus_item"><a class="site-page" href="/link/"><i class="fa-fw fas fa-link"></i><span> 友链</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">C语言的本质</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2022-10-23T01:58:59.000Z" title="发表于 2022-10-23 09:58:59">2022-10-23</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2022-10-23T12:54:42.977Z" title="更新于 2022-10-23 20:54:42">2022-10-23</time></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="C语言的本质"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1 id="程序执行"><a href="#程序执行" class="headerlink" title="程序执行"></a>程序执行</h1><p>程序编译生成axf&#x2F;hex&#x2F;bin文件烧写到单片机flash中，cpu上电后依次读取flash中的指令并执行这些指令</p>
+<p>在调用函数时，LR寄存器保存执行函数前下一条指令的地址，执行完函数后跳回到LR寄存器中保存的地址。</p>
+<p>在调用函数前，先进行保存现场，将当前寄存器中的数值压入栈中</p>
+<p>PC保存函数的地址，CPU每次都是执行PC寄存器中的指令</p>
+<h1 id="局部变量"><a href="#局部变量" class="headerlink" title="局部变量"></a>局部变量</h1><p>局部变量初始化先分配在栈中，在初始化时先使用压栈指令给局部变量分配空间，再使用mov指令和str指令对该空间进行赋值</p>
+<p>在进入函数时分配局部变量和程序开始执行时分配局部变量相同，在退出函数时依次将当前栈内的数据弹栈赋值给寄存器，将进入栈时压入的LR寄存器的数值赋值给PC寄存器，栈指针恢复到进入函数之前的位置。</p>
+<h1 id="全局变量的初始化和空间分配"><a href="#全局变量的初始化和空间分配" class="headerlink" title="全局变量的初始化和空间分配"></a>全局变量的初始化和空间分配</h1><p>在调用main函数之前需要先调用一个copy函数将flash中的全局变量全部复制到ram中</p>
+<p>链接器会根据已经指定的内存地址来进行空间分配</p>
+<p>在对全局变量进行赋值操作时，首先去flash中读取全局变量在内存中的地址，根据该地址来得到全局变量的数值</p>
+<p>没有进行初始化或者初始化为0的全局变量&#x2F;静态局部变量存储到bss段</p>
+<p>多线程访问全局变量会产生<strong>非线程安全现象</strong>，在线程A对变量进行修改时，切换到线程B，切换前进行保护现场的操作，将还未经修改寄存器数值保存到堆栈，线程B修改寄存器数值后切换到A线程时需要恢复A线程的现场，将堆栈中未经修改的寄存器数值又赋值回了寄存器中，相当于线程B进行了无效操作。</p>
+<p>为防止以上现象发生可以在访问全局变量时关中断，防止中断函数打断访问过程。</p>
+<h1 id="RAM、ROM和FLASH"><a href="#RAM、ROM和FLASH" class="headerlink" title="RAM、ROM和FLASH"></a>RAM、ROM和FLASH</h1><p>ROM中存放用户程序和需要永久保存的数据。</p>
+<p>RAM中存储用户程序中用到的变量，包括全局变量，局部变量，堆栈段。</p>
+<p>FLASH中存储用户程序和需要永久保存的数据。</p>
+<p>以f103为例，ram仅有64k，flash有512k，代码段存放在flash中</p>
+<h1 id="栈和堆"><a href="#栈和堆" class="headerlink" title="栈和堆"></a>栈和堆</h1><p>栈向下增长</p>
+<p>堆就是一块可以使用malloc和free函数管理的空闲空间 </p>
+<p>堆的简易实现为一个占位空间大的数组</p>
+<figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">volatile</span> <span class="type">char</span> mybuf[<span class="number">20</span>*<span class="number">1024</span>];</span><br><span class="line"><span class="keyword">volatile</span> <span class="type">int</span> index = <span class="number">0</span>;</span><br><span class="line"><span class="type">void</span> *<span class="title function_">malloc</span><span class="params">(<span class="type">int</span> size)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">char</span> *ret = &amp;mybuf[index];</span><br><span class="line">    index += size;</span><br><span class="line">    <span class="keyword">return</span> ret;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<p>单片机程序运行栈不够的时候，程序会跑飞</p>
+<h1 id="函数"><a href="#函数" class="headerlink" title="函数"></a>函数</h1></article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta">文章作者: </span><span class="post-copyright-info"><a href="http://example.com">Wtl</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta">文章链接: </span><span class="post-copyright-info"><a href="http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/">http://example.com/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta">版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="http://example.com" target="_blank">SEwtl</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/%E5%B5%8C%E5%85%A5%E5%BC%8F/">嵌入式</a></div><div class="post_share"><div class="social-share" data-image="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/C%E8%AF%AD%E8%A8%80%E6%9C%AC%E8%B4%A8/C_index.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc/sharejs/dist/js/social-share.min.js" defer></script></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/"><img class="prev-cover" src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/Linux_index.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">嵌入式Linux</div></div></a></div><div class="next-post pull-right"><a href="/2022/10/19/2022-10-19/"><img class="next-cover" src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.19_index.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">2022.10.19</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2022/10/11/ucos/" title="ucos"><img class="cover" src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8F/%E5%B5%8C%E5%85%A5%E5%BC%8F_index.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-11</div><div class="title">ucos</div></div></a></div><div><a href="/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" title="嵌入式Linux"><img class="cover" src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/Linux_index.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2022-10-24</div><div class="title">嵌入式Linux</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/hexo_dido.jpg" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">Wtl</div><div class="author-info__description">wtl的个人博客</div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">14</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">7</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">4</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/wtl0419"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="https://github.com/wtl0419" target="_blank" title="Github"><i class="fab fa-github"></i></a><a class="social-icon" href="/1574041371@qq.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">Wtl的博客</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#%E7%A8%8B%E5%BA%8F%E6%89%A7%E8%A1%8C"><span class="toc-number">1.</span> <span class="toc-text">程序执行</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%B1%80%E9%83%A8%E5%8F%98%E9%87%8F"><span class="toc-number">2.</span> <span class="toc-text">局部变量</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%85%A8%E5%B1%80%E5%8F%98%E9%87%8F%E7%9A%84%E5%88%9D%E5%A7%8B%E5%8C%96%E5%92%8C%E7%A9%BA%E9%97%B4%E5%88%86%E9%85%8D"><span class="toc-number">3.</span> <span class="toc-text">全局变量的初始化和空间分配</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#RAM%E3%80%81ROM%E5%92%8CFLASH"><span class="toc-number">4.</span> <span class="toc-text">RAM、ROM和FLASH</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E6%A0%88%E5%92%8C%E5%A0%86"><span class="toc-number">5.</span> <span class="toc-text">栈和堆</span></a></li><li class="toc-item toc-level-1"><a class="toc-link" href="#%E5%87%BD%E6%95%B0"><span class="toc-number">6.</span> <span class="toc-text">函数</span></a></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" title="嵌入式Linux"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/Linux_index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="嵌入式Linux"/></a><div class="content"><a class="title" href="/2022/10/24/%E5%B5%8C%E5%85%A5%E5%BC%8FLinux/" title="嵌入式Linux">嵌入式Linux</a><time datetime="2022-10-24T01:33:41.000Z" title="发表于 2022-10-24 09:33:41">2022-10-24</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="C语言的本质"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/C%E8%AF%AD%E8%A8%80%E6%9C%AC%E8%B4%A8/C_index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="C语言的本质"/></a><div class="content"><a class="title" href="/2022/10/23/C%E8%AF%AD%E8%A8%80%E7%9A%84%E6%9C%AC%E8%B4%A8/" title="C语言的本质">C语言的本质</a><time datetime="2022-10-23T01:58:59.000Z" title="发表于 2022-10-23 09:58:59">2022-10-23</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/19/2022-10-19/" title="2022.10.19"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.19_index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022.10.19"/></a><div class="content"><a class="title" href="/2022/10/19/2022-10-19/" title="2022.10.19">2022.10.19</a><time datetime="2022-10-19T09:49:30.000Z" title="发表于 2022-10-19 17:49:30">2022-10-19</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/13/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AF%95%E9%A2%98/" title="面试笔试题"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E9%9D%A2%E8%AF%95/interview_index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="面试笔试题"/></a><div class="content"><a class="title" href="/2022/10/13/%E9%9D%A2%E8%AF%95%E7%AC%94%E8%AF%95%E9%A2%98/" title="面试笔试题">面试笔试题</a><time datetime="2022-10-13T07:59:13.000Z" title="发表于 2022-10-13 15:59:13">2022-10-13</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2022/10/11/2022-10-11/" title="2022.10.11"><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.11_index.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="2022.10.11"/></a><div class="content"><a class="title" href="/2022/10/11/2022-10-11/" title="2022.10.11">2022.10.11</a><time datetime="2022-10-11T12:39:27.000Z" title="发表于 2022-10-11 20:39:27">2022-10-11</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2022 By Wtl</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside_config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js"></script><script src="/js/main.js"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui/dist/fancybox.umd.min.js"></script><div class="js-pjax"></div><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
