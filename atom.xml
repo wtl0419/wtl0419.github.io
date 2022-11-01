@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2022-11-01T11:17:45.817Z</updated>
+  <updated>2022-11-01T11:27:38.927Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -21,7 +21,7 @@
     <link href="http://example.com/2022/11/01/STM32Collection/"/>
     <id>http://example.com/2022/11/01/STM32Collection/</id>
     <published>2022-11-01T11:03:56.000Z</published>
-    <updated>2022-11-01T11:17:45.817Z</updated>
+    <updated>2022-11-01T11:27:38.927Z</updated>
     
     <content type="html"><![CDATA[<h1 id="菜单切换"><a href="#菜单切换" class="headerlink" title="菜单切换"></a>菜单切换</h1><p>​使用傻孩子菜单设计进行菜单切换，使用结构体记录菜单信息，记录的信息有同级菜单内界面个数，每个界面有自己的固定位置，记录在结构体中，正在运行的界面，按键所在位置（当前按键数值），菜单应执行的函数，使用函数指针进行存储，菜单对应选项的按键处理函数指针，指向子节点的指针和指向父节点的指针。</p><p>​在程序内创建结构体数组设定菜单的数量，包含同级菜单和子菜单，并对结构体数组进行初始化，初始化结构体内每个成员变量的内容。</p><p>​根据界面切换函数来根据键码值运行键码值对应的菜单界面。在同级界面进行切换时如果切换到同级菜单的最后一个界面，根据当前界面的坐标和最大菜单界面数进行比较来进行菜单切换。</p><h1 id="界面刷新"><a href="#界面刷新" class="headerlink" title="界面刷新"></a>界面刷新</h1><p>将缓存内容通过OLED_Display函数调用OLED写函数写入OLED屏。</p>]]></content>
     
