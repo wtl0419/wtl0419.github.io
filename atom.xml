@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-01-07T03:43:11.879Z</updated>
+  <updated>2023-02-27T13:33:52.209Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,44 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>2023.2.27</title>
+    <link href="http://example.com/2023/02/27/2023-2-27/"/>
+    <id>http://example.com/2023/02/27/2023-2-27/</id>
+    <published>2023-02-27T13:20:20.000Z</published>
+    <updated>2023-02-27T13:33:52.209Z</updated>
+    
+    <content type="html"><![CDATA[<p>好久没有过记录了，记一下最近工作时形成的习惯和工作的感悟吧。</p><h1 id="工作习惯"><a href="#工作习惯" class="headerlink" title="工作习惯"></a>工作习惯</h1><p>最开始给了我一个笔记本用来记东西，当时工作的时候都是火急火燎的直接在txt上面记东西，还在想别人为什么要记在笔记本上面，记在脑子里当下就处理不好么，直到有一天脑子实在是承受不住，需要将工作思路梳理慢慢地清楚再继续下一步的工作，并将工作时要进行的步骤也记在本子上，有了这个习惯后工作起来一步一步地执行，将要做的和想做的记在本子上，梳理好思路再干活，就很少出现以前脑子总是在高速运转时那么累了。</p><h1 id="工作感悟"><a href="#工作感悟" class="headerlink" title="工作感悟"></a>工作感悟</h1><p>🤔在和别人交代工作时不应该显摆自己比别人会的多的地方，应虚心求教，在这两个月的时间里改掉了工作时很狂的心态，哪里不会问哪里，每个人都可以教我，毕竟每个人都做过我没做过的工作，在遇到困难时直接请教就好。</p><h1 id="工作环境"><a href="#工作环境" class="headerlink" title="工作环境"></a>工作环境</h1><p>因为是外企，公司的氛围我很喜欢，虽然偶尔会有一些做不完的工作需要加班，但这个弹性工作制度还是挺好的，满足了我想要提前下班回家的需要，还有同事之间没有勾心斗角，在请教问题时都是知无不言言无不尽，正好符合我的为人，有了平等的对待，同事对我这样，我也对同事真诚，把会的全部说了出来。</p>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;p&gt;好久没有过记录了，记一下最近工作时形成的习惯和工作的感悟吧。&lt;/p&gt;
+&lt;h1 id=&quot;工作习惯&quot;&gt;&lt;a href=&quot;#工作习惯&quot; class=&quot;headerlink&quot; title=&quot;工作习惯&quot;&gt;&lt;/a&gt;工作习惯&lt;/h1&gt;&lt;p&gt;最开始给了我一个笔记本用来记东西，当时工作的时候</summary>
+      
+    
+    
+    
+    
+    <category term="记录" scheme="http://example.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>2023223</title>
+    <link href="http://example.com/2023/02/23/2023-2-23/"/>
+    <id>http://example.com/2023/02/23/2023-2-23/</id>
+    <published>2023-02-23T13:58:44.000Z</published>
+    <updated>2023-02-23T14:01:38.452Z</updated>
+    
+    
+    
+    
+    
+    <category term="记录" scheme="http://example.com/tags/%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
   
   <entry>
     <title>git_push</title>
@@ -430,50 +468,6 @@
     
     
     <category term="esp8266" scheme="http://example.com/tags/esp8266/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>STM32连接阿里云</title>
-    <link href="http://example.com/2022/10/05/STM32%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/"/>
-    <id>http://example.com/2022/10/05/STM32%E8%BF%9E%E6%8E%A5%E9%98%BF%E9%87%8C%E4%BA%91/</id>
-    <published>2022-10-05T03:20:06.000Z</published>
-    <updated>2022-10-07T11:34:05.677Z</updated>
-    
-    <content type="html"><![CDATA[<h2 id="烧录固件"><a href="#烧录固件" class="headerlink" title="烧录固件"></a>烧录固件</h2><p>在安信可官网下载固件号为0781的AT固件</p><p>选择8M的固件，选择串口后点击start开始烧录</p><p><img src="https://s1.ax1x.com/2022/10/07/x3X5tI.png"></p><h2 id="移植并修改实例程序中的参数"><a href="#移植并修改实例程序中的参数" class="headerlink" title="移植并修改实例程序中的参数"></a>移植并修改实例程序中的参数</h2><h3 id="具体步骤"><a href="#具体步骤" class="headerlink" title="具体步骤"></a>具体步骤</h3><p>首先进入阿里云平台，展开设备管理，点击设备并查看目标设备，查看MQTT连接参数</p><p>复制地址mqttHostUrl和端口号port作为备用，复制后点击上方的DeviceSecret查看按钮，复制设备证书的三元组信息</p><p>三元组信息：产品ID，设备名，设备证书</p><p>复制完成后点击产品选项，点击查看，点击Topic类列表，点击自定义Topic，复制订阅和发布地址</p><p>修改程序内无线路由器名称和密码，修改IP地址和端口号，修改实际三元组信息，修改实际的订阅地址。</p><h4 id="我的内容"><a href="#我的内容" class="headerlink" title="我的内容"></a>我的内容</h4><p>ip地址：iot-06z00h6yp22nd5b.mqtt.iothub.aliyuncs.com<br>port：1883<br>产品ID：hqbae3iSjhM<br>产品名称：deviceStm32<br>产品证书：bb54c8a0549bb9a9795b98076c8eb7df<br>订阅：&#x2F;hqbae3iSjhM&#x2F;deviceStm32&#x2F;user&#x2F;get<br>发布：&#x2F;hqbae3iSjhM&#x2F;deviceStm32&#x2F;user&#x2F;update&#x2F;error</p><h2 id="云平台数据收发"><a href="#云平台数据收发" class="headerlink" title="云平台数据收发"></a>云平台数据收发</h2><p>进入设备，点击设备选择Topic列表，点击发布消息</p><p>在监控运维中的日志服务可以查看到收发的消息</p><h2 id="驱动程序结构与原理"><a href="#驱动程序结构与原理" class="headerlink" title="驱动程序结构与原理"></a>驱动程序结构与原理</h2><p>程序首先与云平台建立TCP连接，其余通讯由MQTT协议来实现</p><h4 id="MQTT控制报文的结构"><a href="#MQTT控制报文的结构" class="headerlink" title="MQTT控制报文的结构"></a>MQTT控制报文的结构</h4><h5 id="固定报头"><a href="#固定报头" class="headerlink" title="固定报头"></a>固定报头</h5><p>固定包头由两个字节组成，第一个字节包含MQTT控制报文的类型和用于指定控制报文类型的标志位，第二个字节为剩余长度</p><h5 id="可变报头"><a href="#可变报头" class="headerlink" title="可变报头"></a>可变报头</h5><p>内容为订阅和发布信息</p><h5 id="有效载荷"><a href="#有效载荷" class="headerlink" title="有效载荷"></a>有效载荷</h5><p>实际要发送的内容信息</p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h2 id=&quot;烧录固件&quot;&gt;&lt;a href=&quot;#烧录固件&quot; class=&quot;headerlink&quot; title=&quot;烧录固件&quot;&gt;&lt;/a&gt;烧录固件&lt;/h2&gt;&lt;p&gt;在安信可官网下载固件号为0781的AT固件&lt;/p&gt;
-&lt;p&gt;选择8M的固件，选择串口后点击start开始烧录&lt;/p&gt;
-&lt;p&gt;&lt;</summary>
-      
-    
-    
-    
-    
-    <category term="stm32" scheme="http://example.com/tags/stm32/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Hello World</title>
-    <link href="http://example.com/2022/10/04/hello-world/"/>
-    <id>http://example.com/2022/10/04/hello-world/</id>
-    <published>2022-10-04T07:24:34.878Z</published>
-    <updated>2022-10-04T07:24:34.878Z</updated>
-    
-    <content type="html"><![CDATA[<p>Welcome to <a href="https://hexo.io/">Hexo</a>! This is your very first post. Check <a href="https://hexo.io/docs/">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="https://hexo.io/docs/troubleshooting.html">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues">GitHub</a>.</p><h2 id="Quick-Start"><a href="#Quick-Start" class="headerlink" title="Quick Start"></a>Quick Start</h2><h3 id="Create-a-new-post"><a href="#Create-a-new-post" class="headerlink" title="Create a new post"></a>Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">&quot;My New Post&quot;</span></span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/writing.html">Writing</a></p><h3 id="Run-server"><a href="#Run-server" class="headerlink" title="Run server"></a>Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/server.html">Server</a></p><h3 id="Generate-static-files"><a href="#Generate-static-files" class="headerlink" title="Generate static files"></a>Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/generating.html">Generating</a></p><h3 id="Deploy-to-remote-sites"><a href="#Deploy-to-remote-sites" class="headerlink" title="Deploy to remote sites"></a>Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure><p>More info: <a href="https://hexo.io/docs/one-command-deployment.html">Deployment</a></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;p&gt;Welcome to &lt;a href=&quot;https://hexo.io/&quot;&gt;Hexo&lt;/a&gt;! This is your very first post. Check &lt;a href=&quot;https://hexo.io/docs/&quot;&gt;documentation&lt;/a&gt; for</summary>
-      
-    
-    
-    
     
   </entry>
   
