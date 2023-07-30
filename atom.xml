@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-03-03T14:26:39.794Z</updated>
+  <updated>2023-07-04T08:32:10.731Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,19 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>123</title>
+    <link href="http://example.com/2023/07/04/123/"/>
+    <id>http://example.com/2023/07/04/123/</id>
+    <published>2023-07-04T08:32:10.000Z</published>
+    <updated>2023-07-04T08:32:10.731Z</updated>
+    
+    
+    
+    
+    
+  </entry>
   
   <entry>
     <title>2023.3.3</title>
@@ -444,30 +457,6 @@
     
     
     <category term="软件设计师" scheme="http://example.com/tags/%E8%BD%AF%E4%BB%B6%E8%AE%BE%E8%AE%A1%E5%B8%88/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022.10.7</title>
-    <link href="http://example.com/2022/10/07/2022-10-7/"/>
-    <id>http://example.com/2022/10/07/2022-10-7/</id>
-    <published>2022-10-07T11:18:04.000Z</published>
-    <updated>2022-10-10T11:16:10.294Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="毕设开题"><a href="#毕设开题" class="headerlink" title="毕设开题"></a>毕设开题</h1><h2 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h2><p>今天是毕业设计开题的日子，题目定为《基于STM32的森林火灾检测系统的设计与实现》，由于毕设和以后就业方向的知识大致吻合，所以已经完成了一部分内容，已经完成了采集温湿度的程序，还打算加上GPS定位功能，采集完成后一同发往上位机。</p><h2 id="正在进行的内容"><a href="#正在进行的内容" class="headerlink" title="正在进行的内容"></a>正在进行的内容</h2><p>目前正在进行的工作是使用esp8266进行连接云服务器，已经完成了TCP连接功能，但卡在了连接云服务器的功能上，今天一天的工作下来了解到了连接云服务器需要基于MQTT传输协议，需要向esp8266中烧录固件并使用AT+MQTT指令进行连接，但连接上无线网之后向8266中发送AT指令后一直回复ERROR，目前考虑的解决方法是可能是烧录的固件不支持MQTT。看了许多教程，但教程没有详细地讲述mqtt的AT指令，自己尝试发送AT指令却一直error，唉，麻了麻了，一天下来没有一点进展。</p><h2 id="明日工作内容"><a href="#明日工作内容" class="headerlink" title="明日工作内容"></a>明日工作内容</h2><p>明天尝试更换下固件，按着收藏的博文进行一遍，就这些。</p><h2 id="一些牢骚"><a href="#一些牢骚" class="headerlink" title="一些牢骚"></a>一些牢骚</h2><p>好多东西我都没办法一遍调通，每次都是系统地对知识点进行学习之后才可以向下进行，让我感觉对自己很失望。</p><p>明天还得开始软件设计师考试的学习，还有不到一个月，有一半的东西还没学习，忙死了，又是就业，又是毕设，还想脱单。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%96%87%E7%AB%A0%E5%B0%81%E9%9D%A2/2022.10.7.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;毕设开题&quot;&gt;&lt;a href=&quot;#毕设开题&quot; class=&quot;headerlink&quot; title=&quot;毕设开题&quot;&gt;&lt;/a&gt;毕设开题&lt;/h1&gt;&lt;h2 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a</summary>
-      
-    
-    
-    
-    <category term="记录" scheme="http://example.com/categories/%E8%AE%B0%E5%BD%95/"/>
-    
-    
-    <category term="毕业设计开发" scheme="http://example.com/tags/%E6%AF%95%E4%B8%9A%E8%AE%BE%E8%AE%A1%E5%BC%80%E5%8F%91/"/>
     
   </entry>
   
