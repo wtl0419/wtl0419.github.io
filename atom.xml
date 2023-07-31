@@ -6,7 +6,7 @@
   <link href="http://example.com/atom.xml" rel="self"/>
   
   <link href="http://example.com/"/>
-  <updated>2023-07-30T13:32:07.017Z</updated>
+  <updated>2023-07-31T08:38:51.718Z</updated>
   <id>http://example.com/</id>
   
   <author>
@@ -15,6 +15,31 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>两数之和</title>
+    <link href="http://example.com/2023/07/31/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/"/>
+    <id>http://example.com/2023/07/31/%E4%B8%A4%E6%95%B0%E4%B9%8B%E5%92%8C/</id>
+    <published>2023-07-31T08:32:08.000Z</published>
+    <updated>2023-07-31T08:38:51.718Z</updated>
+    
+    <content type="html"><![CDATA[<h1 id="两数之和"><a href="#两数之和" class="headerlink" title="两数之和"></a>两数之和</h1><p>从今天开始进行算法学习，目标是力扣热门一百题。</p><p>第一天是两数之和，感觉没有太大难度，使用两个循环遍历数组即可得到目标数值。</p><figure class="highlight c"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br></pre></td><td class="code"><pre><span class="line"><span class="type">int</span>* <span class="title function_">twoSum</span><span class="params">(<span class="type">int</span>* nums, <span class="type">int</span> numsSize, <span class="type">int</span> target, <span class="type">int</span>* returnSize)</span></span><br><span class="line">&#123;</span><br><span class="line">    <span class="type">int</span> i = <span class="number">0</span>;</span><br><span class="line">    <span class="type">int</span> j = <span class="number">0</span>;</span><br><span class="line">    <span class="keyword">for</span> ( i = <span class="number">0</span>; i &lt; numsSize; i++)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="comment">/* code */</span></span><br><span class="line">        <span class="keyword">for</span> ( j = i+<span class="number">1</span>; j &lt; numsSize; j++)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="comment">/* code */</span></span><br><span class="line">            <span class="keyword">if</span>(nums[i] + nums[j] == target)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="type">int</span> *retArr = <span class="built_in">malloc</span>(<span class="number">2</span> * <span class="keyword">sizeof</span>(<span class="type">int</span>));</span><br><span class="line">                retArr[<span class="number">0</span>] = i;</span><br><span class="line">                retArr[<span class="number">1</span>] = j;</span><br><span class="line">                *returnSize = <span class="number">2</span>;</span><br><span class="line"></span><br><span class="line">                <span class="keyword">return</span> retArr;</span><br><span class="line">            &#125;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    *returnSize = <span class="number">0</span>;</span><br><span class="line"></span><br><span class="line">    <span class="keyword">return</span> <span class="literal">NULL</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>]]></content>
+    
+    
+      
+      
+    <summary type="html">&lt;h1 id=&quot;两数之和&quot;&gt;&lt;a href=&quot;#两数之和&quot; class=&quot;headerlink&quot; title=&quot;两数之和&quot;&gt;&lt;/a&gt;两数之和&lt;/h1&gt;&lt;p&gt;从今天开始进行算法学习，目标是力扣热门一百题。&lt;/p&gt;
+&lt;p&gt;第一天是两数之和，感觉没有太大难度，使用两个循环遍历数组即可得</summary>
+      
+    
+    
+    
+    <category term="算法学习" scheme="http://example.com/categories/%E7%AE%97%E6%B3%95%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="算法" scheme="http://example.com/tags/%E7%AE%97%E6%B3%95/"/>
+    
+  </entry>
   
   <entry>
     <title>大话设计模式</title>
@@ -432,29 +457,6 @@
     
     
     <category term="求职" scheme="http://example.com/tags/%E6%B1%82%E8%81%8C/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>2022.10.11</title>
-    <link href="http://example.com/2022/10/11/2022-10-11/"/>
-    <id>http://example.com/2022/10/11/2022-10-11/</id>
-    <published>2022-10-11T12:39:27.000Z</published>
-    <updated>2022-10-11T12:56:29.337Z</updated>
-    
-    <content type="html"><![CDATA[<h1 id="前情提要"><a href="#前情提要" class="headerlink" title="前情提要"></a>前情提要</h1><p>看昨天的吧。</p><h1 id="今日进行的事情"><a href="#今日进行的事情" class="headerlink" title="今日进行的事情"></a>今日进行的事情</h1><p>今天上午先是继续进行esp8266连接阿里云的工作，但越看越乱，一会儿阿里云，一会儿onenet云，连个都不太好弄，弄着弄着到了上课的时间，上课之前老师提议让我去北京工作，上课过程中看了看北京的秋招岗位，岗位要求并不多，只要求C语言扎实，其余都是加分项，薪资平均在一万二，让我不禁怀疑我是否真的值这个假期，于是决定花两百块钱付费咨询一下。</p><p>下午把具体情况和微信上的勃勃说了下，他给出了学习路线，并对我的简历进行了评价，简历方面并不需要太多地修改，在本科毕业生水平中处于中上，相当于鼓励了我，目前是打算一边学习ucos实时操作系统一边进行投简历找机会。还说我这个水平的薪资在一万五左右，让我不要妄自菲薄，好家伙，要是真有这样就好了。</p><p>今天进行了ucos的移植工作，还没有做完。</p><h1 id="明日工作"><a href="#明日工作" class="headerlink" title="明日工作"></a>明日工作</h1><p>继续学习ucos，先完成移植工作。</p><h1 id="一些牢骚"><a href="#一些牢骚" class="headerlink" title="一些牢骚"></a>一些牢骚</h1><p>最近因为这个esp8266，有点上火，嘴巴和鼻子周围又爆了好几个痘痘，唉😔。</p><p><img src="https://hexo-1314225961.cos.ap-nanjing.myqcloud.com/%E6%97%A5%E5%B8%B8%E8%AE%B0%E5%BD%95%E7%94%A8%E5%9B%BE/2022.10.11_content.jpg"></p>]]></content>
-    
-    
-      
-      
-    <summary type="html">&lt;h1 id=&quot;前情提要&quot;&gt;&lt;a href=&quot;#前情提要&quot; class=&quot;headerlink&quot; title=&quot;前情提要&quot;&gt;&lt;/a&gt;前情提要&lt;/h1&gt;&lt;p&gt;看昨天的吧。&lt;/p&gt;
-&lt;h1 id=&quot;今日进行的事情&quot;&gt;&lt;a href=&quot;#今日进行的事情&quot; class=&quot;headerli</summary>
-      
-    
-    
-    
-    <category term="记录" scheme="http://example.com/categories/%E8%AE%B0%E5%BD%95/"/>
-    
     
   </entry>
   
